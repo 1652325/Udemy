@@ -1,0 +1,26 @@
+﻿@model Udemy.ViewModel.MoviesVm
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movies</h2>
+
+@if (Model.lstMovies.Count == 0)
+{
+    <text>There are no movies yet</text>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Movie</th>
+        </tr>
+        @foreach (var movie in Model.lstMovies)
+        {
+            <tr>
+                <td>@movie.Name</td>
+            </tr>
+        }
+    </table>
+}
+

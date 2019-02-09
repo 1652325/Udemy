@@ -1,0 +1,26 @@
+﻿@model Udemy.ViewModel.CustomersVm
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customers</h2>
+
+@if (Model.lstCustomers.Count == 0)
+{
+    <text>There are no customers currently</text>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <tr>
+            <td>Customer</td>
+        </tr>
+        @foreach (var customer in Model.lstCustomers)
+        {
+            <tr>
+                <th><a href="/Customers/Details/@customer.Id">@customer.Name</a></th>
+            </tr>
+        }
+    </table>
+}
+
