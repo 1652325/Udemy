@@ -18,7 +18,7 @@ namespace Udemy.Controllers
                 lstMovies =
                 {
                     new Movie(){ Id = 1, Name = "First Movie"},
-                    new Movie(){ Id = 2, Name = "Second Movie"}
+                    new Movie(){ Id = 2, Name = "Second Movie2"}
                 }
             };
             return View(movies);
