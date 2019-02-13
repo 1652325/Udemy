@@ -1,11 +1,11 @@
-﻿@model Udemy.ViewModel.CustomersVm
+﻿@model IEnumerable<Udemy.Models.Customer>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Customers</h2>
 
-@if (Model.lstCustomers.Count == 0)
+@if (!Model.Any())
 {
     <text>There are no customers currently</text>
 }
@@ -13,12 +13,14 @@ else
 {
     <table class="table table-bordered table-hover">
         <tr>
-            <td>Customer</td>
+            <th>Customer</th>
+            <th>Discount Rate</th>
         </tr>
-        @foreach (var customer in Model.lstCustomers)
+        @foreach (var customer in Model)
         {
             <tr>
-                <th><a href="/Customers/Details/@customer.Id">@customer.Name</a></th>
+                <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id}, null)</td>
+                <td>@customer.MembershipType.Name</td>­­
             </tr>
         }
     </table>

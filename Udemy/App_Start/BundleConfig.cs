@@ -23,7 +23,7 @@ namespace Udemy
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootswatch/lumen/bootstrap.css",
                       "~/Content/site.css"));
         }
     }
