@@ -41,13 +41,16 @@ namespace Udemy.Controllers
         public ActionResult New()
         {
             var membershipTypes = _context.membershipTypes.ToList();
+
             var viewModel = new CustomerFormViewModel
             {
+                Customer = new Customer(),
                 membershipTypes = membershipTypes
             };
             return View("CustomerForm",viewModel);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             if (!ModelState.IsValid)

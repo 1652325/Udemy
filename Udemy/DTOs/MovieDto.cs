@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Udemy.Models;
 
-namespace Udemy.Models
+namespace Udemy.DTOs
 {
-    public class Movie
+    public class MovieDto
     {
         public int Id { get; set; }
         [Required]
@@ -19,7 +20,6 @@ namespace Udemy.Models
         [Display(Name = "Number in Stock")]
         [Range(1, 20)]
         public int NumberInStock { get; set; }
-        public Genre Genre { get; set; }
         [Display(Name = "Genre")]
         [Required]
         public int GenreId { get; set; }
