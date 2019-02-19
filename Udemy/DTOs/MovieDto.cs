@@ -20,8 +20,9 @@ namespace Udemy.DTOs
         [Display(Name = "Number in Stock")]
         [Range(1, 20)]
         public int NumberInStock { get; set; }
-        [Display(Name = "Genre")]
-        [Required]
-        public int GenreId { get; set; }
+
+        public byte GenreId { get; set; }
+
+        public GenreDto Genre { get; set; }
     }
 }
